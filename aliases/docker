@@ -2,6 +2,9 @@
 
 if hash docker 2>/dev/null; then
 
+	# export environment variables to current session
+	dme() { eval $(docker-machine env $1); }
+
 	# Get latest container ID
 	alias dl="docker ps -l -q"
 
@@ -18,7 +21,7 @@ if hash docker 2>/dev/null; then
 	alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 
 	# Execute a command on an existing container, e.g., $de container-name /bin/bash
-	alias de="docker exec -i -t"
+	alias dex='docker exec -it'
 
 	# Run interactive container, e.g., $di base /bin/bash
 	alias di="docker run -i -t -P"

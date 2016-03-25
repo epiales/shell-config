@@ -9,11 +9,36 @@ if [[ $(uname -s) == "Darwin" ]]; then
 	brew update
 	brew prune
 
-	brew install git
-	brew install htop
-	brew install wget
-	brew install tree
-	brew install docker
-	brew install docker-machine
-	brew install caskroom/cask/brew-cask
+	packages=(
+		"caskroom/cask/brew-cask"
+		"composer"
+		"docker"
+		"docker-compose"
+		"docker-machine"
+		"drush"
+		"fswatch"
+		"git"
+		"gource"
+		"htop"
+		"jmeter"
+		"memcached"
+		"mysql"
+		"nmap"
+		"nvm"
+		"p7zip"
+		"php70"
+		"php70-redis"
+		"php70-xdebug"
+		"pv"
+		"tree"
+		"unison"
+		"watch"
+		"wget"
+		"zsh"
+	)
+
+	trap "exit" INT
+	for package in "${packages[@]}"; do
+		brew install $package
+	done
 fi

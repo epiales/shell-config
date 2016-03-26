@@ -10,4 +10,5 @@ if [[ $(uname -s) == "Darwin" ]]; then
 
     alias fix-osx-plex="sudo codesign --force --sign - /Applications/Plex\ Home\ Theater.app/"
     alias remove-dsstore="find . -name '*.DS_Store' -type f -delete"
+    alias clear-cache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; say DNS cache flushed"
 fi

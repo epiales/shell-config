@@ -1,16 +1,18 @@
 [user]
-	name = Michael Tuttle
-	email = openam@gmail.com
-	github = openam
+	name = Logan Brown
+	email = logan.brown1223@gmail.com
+	github = epiales
 [color]
 	ui = true
 [alias]
 	amend = commit --amend
+	backup = "!git checkout -b backup-$(date +\"%Y-%m-%d_%H-%M-%S\")-$(git symbolic-ref --short HEAD); git checkout -; git lg -4"
 	br = branch
 	ck = checkout
 	ckb = checkout -b
 	cm = commit
 	cmm = commit -m
+	date = "!git commit --amend --date=\"$(date)\""
 	ds = diff --staged -C
 	fa = fetch --all
 	fu = fetch upstream
@@ -19,15 +21,14 @@
 	la = !git lg --all
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	prune-all = !git remote | xargs -n 1 git remote prune $1
+	quick = !git add -A; git commit -m \"quick commit\"
 	st = status
-	undo = reset --soft HEAD^
 	standup = "!git lg --since yesterday --author \"$(git config user.name)\" --all"
-	backup = "!git checkout -b backup-$(date +\"%Y-%m-%d_%H-%M-%S\")-$(git symbolic-ref --short HEAD); git checkout -; git lg -4"
-	date = "!git commit --amend --date=\"$(date)\""
+	undo = reset --soft HEAD^
 [core]
 	pager = less -FXRS -x4
-	editor = subl -w
-	excludesfile = /Users/michael.tuttle/.gitignore_global
+	editor = atom -w
+	excludesfile = /Users/logan.brown/.gitignore_global
 	filemode = false
 	autocrlf = input
 [diff]

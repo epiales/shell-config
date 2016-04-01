@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# platform.sh / platform-docker
+export PATH=$HOME/.platformsh/bin:$PATH
+export PLATFORM_DOCKER_MACHINE_NAME="dev"
+source '$HOME/.platformsh/platform.rc' 2> /dev/null

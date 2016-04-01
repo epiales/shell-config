@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git clone --branch master http://git.drupal.org/sandbox/webflo/1113394.git ~/drush_zsh
+ln -s  ~/drush_zsh/drush/drush_zsh.drush.inc ~/.drush/drush_zsh.drush.inc
+ln -s ~/drush_zsh/zsh ~/.oh-my-zsh/plugins/drush

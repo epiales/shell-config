@@ -6,3 +6,4 @@ alias l="ls -AFhl"
 alias cwd="basename `pwd`"
 
 alias reload-profile="source ${HOME}/.zshrc"
+alias edit-profile="atom $HOME/.zshrc"

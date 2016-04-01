@@ -31,8 +31,6 @@
 	excludesfile = /Users/logan.brown/.gitignore_global
 	filemode = false
 	autocrlf = input
-[diff]
-	tool = bc3
 [difftool]
 	prompt = false
 [difftool "sourcetree"]
@@ -40,8 +38,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[merge]
-	tool = bc3
 [push]
 	default = simple
 [filter "lfs"]

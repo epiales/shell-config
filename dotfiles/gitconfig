@@ -5,7 +5,7 @@
 [color]
 	ui = true
 [alias]
-	amend = commit --amend
+	amend = commit --amend --no-edit
 	backup = "!git checkout -b backup-$(date +\"%Y-%m-%d_%H-%M-%S\")-$(git symbolic-ref --short HEAD); git checkout -; git lg -4"
 	br = branch
 	ck = checkout

@@ -31,7 +31,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 # Make setup files executable
-for file in $HOME/.shell-config/setup/*; do
+for file in $HOME/.shell-config/setup/*.sh; do
 	chmod +x $file
 done
 

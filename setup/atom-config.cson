@@ -1,0 +1,46 @@
+"*":
+  aligner:
+    ":-alignment": "left"
+    ":-leftSpace": true
+  core:
+    disabledPackages: [
+      "linter-eslint"
+    ]
+    ignoredNames: [
+      "builds"
+      "www"
+      ".build-archives"
+      "shared/files"
+      ".idea"
+    ]
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+    preferredLineLength: 72
+    showInvisibles: true
+  "exception-reporting":
+    userId: "96fb9c85-c8af-4041-9924-b725fa078b64"
+  "fuzzy-finder": {}
+  "linter-eslint":
+    disableWhenNoEslintConfig: false
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  "linter-php": {}
+  "markdown-preview":
+    liveUpdate: false
+    useGitHubStyle: true
+  pigments: {}
+  "status-bar": {}
+  tabs:
+    enableVcsColoring: true
+    usePreviewTabs: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".ini.source":
+  editor:
+    preferredLineLength: 72

@@ -1,0 +1,51 @@
+"*":
+  aligner:
+    ":-alignment": "left"
+    ":-leftSpace": true
+  core:
+    ignoredNames: [
+      "builds"
+      ".build-archives"
+      "shared/files"
+      ".idea"
+      "libraries"
+      "drush"
+    ]
+    projectHome: "/Users/loganbrown/Sites"
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+    preferredLineLength: 72
+    showInvisibles: true
+    softTabs: false
+  "exception-reporting":
+    userId: "96fb9c85-c8af-4041-9924-b725fa078b64"
+  "fuzzy-finder": {}
+  "linter-eslint":
+    useGlobalEslint: true
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  "linter-php": {}
+  "markdown-preview":
+    liveUpdate: false
+    useGitHubStyle: true
+  "php-debug":
+    PathMaps: [
+      "/app;/Users/loganbrown/Sites/posh-dev"
+    ]
+  pigments: {}
+  "status-bar": {}
+  tabs:
+    enableVcsColoring: true
+    usePreviewTabs: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".ini.source":
+  editor:
+    preferredLineLength: 72
+    tabLength: 4

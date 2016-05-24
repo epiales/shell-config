@@ -37,8 +37,25 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"zsh"
 	)
 
+	casklist=(
+		"4k-youtube-to-mp3"
+		"cheatsheet"
+		"java"
+		"soundflower"
+		"sourcetree"
+		"steam"
+		"tcl"
+		"unity-web-player"
+		"vagrant"
+		"vlc"
+	)
+
 	trap "exit" INT
 	for package in "${packages[@]}"; do
 		brew install $package
+	done
+
+	for cask in "${casklist[@]}"; do
+		brew cask install $cask
 	done
 fi

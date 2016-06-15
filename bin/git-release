@@ -1,0 +1,38 @@
+#!/bin/sh
+
+tagname=$1
+branchname=$2
+last_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
+
+trap "exit 0" SIGINT
+
+# Merge passed branch to master
+git checkout master
+git merge -S --no-ff -m "release: $1
+
+- Merge branch '$2' into master" $2
+echo
+
+# Tag master
+git tag -m "$1" "$1"
+echo
+
+# Merge passed branch to develop
+git checkout dev
+git merge -S --no-ff -m "Merge branch '$2' into develop" $2
+echo
+
+# Update hotfix branch
+git checkout hotfix
+git merge --ff-only master
+echo
+
+# Push to fork
+git push origin master $tagname dev hotfix
+echo
+
+# Output Release Draft
+git-draft $last_tag...$1
+
+# git push upstream master $tagname dev:develop
+# git push upstream hotfix

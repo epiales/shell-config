@@ -1,0 +1,35 @@
+#!/usr/bin/ruby
+
+require 'erb'
+
+commit_range = ARGV[0].to_s
+
+commit_list = `git log --format="%s" #{commit_range}`
+
+fixes = Array.new
+misces = Array.new
+
+commit_list.each_line do |line|
+	if line.match( /^fix/ )
+		scope = line[/^fix\((.*)\):/, 1]
+		subject = line[/:\s(.*)/, 1]
+		fixes.push("#{scope}: #{subject.downcase}\n")
+	elsif line.match(/^release/)
+		next
+	else
+		misces.push(line)
+	end
+end
+
+markdown_template = "
+<% if fixes.length %>
+## Fixes
+
+<% fixes.each do |fix| %> - <%= fix %><% end %>
+<% end %><% if misces.length %>## Misc
+
+<% misces.each do |misc| %> - <%= misc %><% end %>
+<% end %>"
+
+renderer = ERB.new(markdown_template)
+puts output = renderer.result()

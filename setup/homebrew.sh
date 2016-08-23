@@ -19,6 +19,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"fswatch"
 		"git"
 		"gource"
+		"gpg-agent"
 		"htop"
 		"jmeter"
 		"memcached"
@@ -29,7 +30,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"php70"
 		"php70-redis"
 		"php70-xdebug"
+		"pinentry"
 		"pv"
+		"ruby"
 		"tree"
 		"unison"
 		"watch"
@@ -41,6 +44,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"4k-youtube-to-mp3"
 		"cheatsheet"
 		"java"
+		"screenhero"
 		"soundflower"
 		"sourcetree"
 		"steam"
@@ -48,6 +52,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"unity-web-player"
 		"vagrant"
 		"vlc"
+		"ynab"
 	)
 
 	trap "exit" INT

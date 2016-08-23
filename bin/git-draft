@@ -1,34 +1,64 @@
 #!/usr/bin/ruby
 
 require 'erb'
+require 'shell'
+sh = Shell.new
 
 commit_range = ARGV[0].to_s
+latest_tag = commit_range[/(v[\d\.]+)$/, 1]
 
 commit_list = `git log --format="%s" #{commit_range}`
+sha_list = `git log --format="%H" #{commit_range}`
 
 fixes = Array.new
 misces = Array.new
+features = Array.new
 
-commit_list.each_line do |line|
+pwd = Dir.pwd[/\/([a-z\-_0-9]*)$/i, 1]
+
+if pwd === 'repository'
+	pwd = 'dotcom'
+end
+
+jira_regexp = /((DOTCOM|ACADEMY)-[0-9]+)/i
+
+commit_list.lines.each_with_index do |line, index|
+	sha = sha_list.lines[index]
+	full_message = `git log --format="%B" -1 #{sha}`
+	ticket_markdown = full_message.scan(jira_regexp).map { |ticket| "[#{ticket[0]}](https://jira.po.sh/browse/#{ticket[0]})" }
+	jira_tickets = ticket_markdown.join(', ')
+	subject = line[/:\s(.*)/, 1]
 	if line.match( /^fix/ )
 		scope = line[/^fix\((.*)\):/, 1]
-		subject = line[/:\s(.*)/, 1]
-		fixes.push("#{scope}: #{subject.downcase}\n")
-	elsif line.match(/^release/)
+		fixes.push("**#{scope}**: #{subject.downcase} (#PR_NUM) #{jira_tickets}\n")
+	elsif line.match(/^feature/)
+		scope = line[/^feature\((.*)\):/, 1]
+		features.push("**#{scope}**: #{subject.downcase} (#PR_NUM) #{jira_tickets}\n")
+	elsif line.match(/^(release|Merge branch 'release)/)
 		next
+	elsif line.match( /^chore/ )
+		scope = line[/^chore\((.*)\):/, 1]
+		chores.push("**#{scope}**: #{subject.downcase} (#PR_NUM)");
 	else
-		misces.push(line)
+		misces.push("#{line.strip} #{jira_tickets}\n")
 	end
 end
 
 markdown_template = "
-<% if fixes.length %>
-## Fixes
+# Milestone [#{latest_tag}](https://github.com/perfectlyposh/#{pwd}/milestones/#{latest_tag})
+<% if fixes.length > 0 %>
+Fixes
+-----
 
 <% fixes.each do |fix| %> - <%= fix %><% end %>
-<% end %><% if misces.length %>## Misc
+<% end %><% if misces.length > 0 %>Misc
+----
 
 <% misces.each do |misc| %> - <%= misc %><% end %>
+<% end %><% if features.length > 0 %>Features
+--------
+
+<% features.each do |feature| %> - <%= feature %><% end %>
 <% end %>"
 
 renderer = ERB.new(markdown_template)

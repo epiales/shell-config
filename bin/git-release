@@ -18,17 +18,12 @@ git tag -m "$1" "$1"
 echo
 
 # Merge passed branch to develop
-git checkout dev
+git checkout develop
 git merge -S --no-ff -m "Merge branch '$2' into develop" $2
 echo
 
-# Update hotfix branch
-git checkout hotfix
-git merge --ff-only master
-echo
-
 # Push to fork
-git push origin master $tagname dev hotfix
+git push origin master $tagname develop
 echo
 
 # Output Release Draft

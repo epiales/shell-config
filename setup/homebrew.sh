@@ -56,6 +56,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"vagrant"
 		"virtualbox"
 		"vlc"
+		"vmware-fusion7"
 		"ynab"
 	)
 

@@ -60,5 +60,7 @@
 	ui = auto
 [fetch]
 	prune = true
+[tag]
+	forceSignAnnotated = true
 [gpg]
 	program = gpg2

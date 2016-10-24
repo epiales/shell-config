@@ -16,7 +16,7 @@
 	ds = diff --staged -C
 	fa = fetch --all
 	fu = fetch upstream
-	l = !git lg -10
+	l = !git --no-pager lg -10
 	l2 = !git lg -20
 	la = !git lg --all
 	last = log -n 1

@@ -36,7 +36,7 @@
 [core]
 	pager = less -FXRS -x4
 	editor = atom -w
-	excludesfile = /Users/logan.brown/.gitignore_global
+	excludesfile = /Users/loganbrown/.gitignore_global
 	filemode = false
 	autocrlf = input
 [difftool]

@@ -19,6 +19,7 @@
 	l = !git lg -10
 	l2 = !git lg -20
 	la = !git lg --all
+	last = log -n 1
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	prune-all = !git remote | xargs -n 1 git remote prune $1
 	quick = !git add -A && git commit -m \"quick commit\"

@@ -44,6 +44,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 	casklist=(
 		"4k-youtube-to-mp3"
 		"cheatsheet"
+		"discord"
 		"java"
 		"screenhero"
 		"soundflower"

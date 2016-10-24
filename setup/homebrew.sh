@@ -54,6 +54,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"tcl"
 		"unity-web-player"
 		"vagrant"
+		"virtualbox"
 		"vlc"
 		"ynab"
 	)

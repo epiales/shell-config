@@ -46,6 +46,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"cheatsheet"
 		"discord"
 		"java"
+		"livereload"
 		"screenhero"
 		"soundflower"
 		"sourcetree"

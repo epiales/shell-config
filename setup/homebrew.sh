@@ -18,6 +18,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 		"drush"
 		"fswatch"
 		"git"
+		"gnupg2"
 		"gource"
 		"gpg-agent"
 		"htop"

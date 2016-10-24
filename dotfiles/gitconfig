@@ -17,6 +17,7 @@
 	cmm = commit -m
 	cms = commit -S
 	cmms = commit -S -m
+	contains = branch -r --contains
 	date = "!git commit -S --amend --no-edit --date=\"$(date)\""
 	ds = diff --staged -C
 	fa = fetch --all

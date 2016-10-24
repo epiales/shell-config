@@ -60,3 +60,5 @@
 	ui = auto
 [fetch]
 	prune = true
+[gpg]
+	program = gpg2

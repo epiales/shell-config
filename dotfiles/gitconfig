@@ -31,7 +31,7 @@
 	q = !git add -A && git commit -m \"quick commit\"
 	st = status
 	standup = "!git lg --since yesterday --committer \"$(git config user.name)\" --all"
-	undo = reset --soft HEAD^
+	undo = reset HEAD^
 	update = commit --amend --no-edit
 [core]
 	pager = less -FXRS -x4

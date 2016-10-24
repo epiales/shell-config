@@ -22,7 +22,7 @@
 	last = log -n 1
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	prune-all = !git remote | xargs -n 1 git remote prune $1
-	quick = !git add -A && git commit -m \"quick commit\"
+	q = !git add -A && git commit -m \"quick commit\"
 	st = status
 	standup = "!git lg --since yesterday --author \"$(git config user.name)\" --all"
 	undo = reset --soft HEAD^

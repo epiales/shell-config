@@ -5,14 +5,19 @@
 [color]
 	ui = true
 [alias]
-	amend = commit --amend --no-edit
+	amend = commit --amend
 	backup = "!git checkout -b backup-$(date +\"%Y-%m-%d_%H-%M-%S\")-$(git symbolic-ref --short HEAD); git checkout -; git lg -4"
 	br = branch
+	cas = commit --amend -S
+	can = commit --amend --no-edit
+	cans = commit --amend --no-edit -S
 	ck = checkout
 	ckb = checkout -b
 	cm = commit
 	cmm = commit -m
-	date = "!git commit --amend --date=\"$(date)\""
+	cms = commit -S
+	cmms = commit -S -m
+	date = "!git commit -S --amend --no-edit --date=\"$(date)\""
 	ds = diff --staged -C
 	fa = fetch --all
 	fu = fetch upstream
@@ -26,6 +31,7 @@
 	st = status
 	standup = "!git lg --since yesterday --author \"$(git config user.name)\" --all"
 	undo = reset --soft HEAD^
+	update = commit --amend --no-edit
 [core]
 	pager = less -FXRS -x4
 	editor = atom -w

@@ -30,7 +30,7 @@
 	prune-all = !git remote | xargs -n 1 git remote prune $1
 	q = !git add -A && git commit -m \"quick commit\"
 	st = status
-	standup = "!git lg --since yesterday --author \"$(git config user.name)\" --all"
+	standup = "!git lg --since yesterday --committer \"$(git config user.name)\" --all"
 	undo = reset --soft HEAD^
 	update = commit --amend --no-edit
 [core]

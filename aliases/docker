@@ -12,7 +12,7 @@ if hash docker 2>/dev/null; then
 	alias dps="docker ps"
 
 	# Get process included stop container
-	alias dpa="docker ps -a"
+	alias dpa="docker ps -a --format \"table {{ .ID }}\t{{ .Image }}\t{{ .RunningFor }} ago\t{{ .Status }}\t{{ .Names }}\""
 
 	# Get images
 	alias di="docker images"

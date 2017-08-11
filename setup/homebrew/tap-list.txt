@@ -1,5 +1,1 @@
 caskroom/cask
-caskroom/versions
-drone/drone
-homebrew/core
-homebrew/php

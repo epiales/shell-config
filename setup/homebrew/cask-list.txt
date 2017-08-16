@@ -1,5 +1,6 @@
 4k-youtube-to-mp3
 atom
+bartender
 cheatsheet
 dash3
 discord

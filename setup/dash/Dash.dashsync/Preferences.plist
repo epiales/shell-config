@@ -30,7 +30,7 @@
 			<key>petkaantonov/bluebird</key>
 			<dict>
 				<key>date</key>
-				<date>2017-08-16T15:19:54Z</date>
+				<date>2017-11-09T17:48:56Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -44,7 +44,7 @@
 			<key>serverless/serverless</key>
 			<dict>
 				<key>date</key>
-				<date>2017-08-16T15:20:03Z</date>
+				<date>2017-11-28T16:45:08Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -134,7 +134,7 @@
 			<key>http://kapeli.com/feeds/AWS_JavaScript.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-07-26T15:49:00Z</date>
+				<date>2017-11-13T17:34:44Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/ActionScript.xml</key>
 			<dict>
@@ -170,6 +170,11 @@
 			<dict>
 				<key>date</key>
 				<date>2017-07-26T15:49:19Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Chai.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2017-08-17T16:30:17Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Docker.xml</key>
 			<dict>

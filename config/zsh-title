@@ -1,0 +1,14 @@
+#!/bin/zsh
+# https://gist.github.com/capotej/4320967
+
+DISABLE_AUTO_TITLE="true"
+
+set_tab_title () {
+	tab_label="$PWD:t"
+	rlength="20"
+	echo -ne "\e]1;${(l:rlength:)tab_label}\a"
+}
+
+add-zsh-hook chpwd set_tab_title
+
+set_tab_title
